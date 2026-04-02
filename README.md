@@ -51,6 +51,48 @@ make TARGET_ROOT=/custom/path install-all
 
 ---
 
+### 方式二：使用 npx 通过 GitHub 仓库安装
+
+如果你不想克隆仓库，可以使用 npx 直接从 GitHub 仓库安装 skills：
+
+```bash
+# 克隆仓库并安装所有 skills
+npx --yes https://github.com/BlueOrgreen/fan-skills
+
+# 安装指定 skill（需要先克隆仓库）
+git clone https://github.com/BlueOrgreen/fan-skills.git temp-skills
+cd temp-skills
+make install skill=fetch-request-fan-practices
+cd .. && rm -rf temp-skills
+```
+
+或者手动下载并安装：
+
+```bash
+# 直接下载仓库 zip 包
+curl -L https://github.com/BlueOrgreen/fan-skills/archive/refs/heads/main.zip -o fan-skills.zip
+unzip fan-skills.zip
+cd fan-skills-main
+make install-all
+cd .. && rm -rf fan-skills.zip fan-skills-main
+```
+
+---
+
+### 方式三：手动安装
+
+如果你不想使用 Makefile，也可以手动复制 skills：
+
+```bash
+# 目标目录（Claude Code skills 目录）
+TARGET_DIR=~/.claude/skills
+
+# 创建目录并复制
+mkdir -p "$TARGET_DIR"
+cp -r skills/* "$TARGET_DIR/"
+```
+
+---
 
 ## 目录结构
 
@@ -76,6 +118,19 @@ fan-skills/
 
 ```bash
 make install-all
+```
+
+### 手动安装
+
+如果你不想使用 Makefile，也可以手动复制 skills：
+
+```bash
+# 目标目录（Claude Code skills 目录）
+TARGET_DIR=~/.claude/skills
+
+# 创建目录并复制
+mkdir -p "$TARGET_DIR"
+cp -r skills/* "$TARGET_DIR/"
 ```
 
 ### 安装指定技能
@@ -179,6 +234,6 @@ description: 技能描述
 
 <div align="center">
 
-[MIT License](LICENSE) © 2026 TaueFenCheng
+[MIT License](LICENSE) © 2026 Fanyun
 
 </div>
