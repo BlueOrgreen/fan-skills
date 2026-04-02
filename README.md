@@ -1,15 +1,56 @@
-# Fan Skills
+# 🤖 Agent Skills Collection
 
-Claude Code 技能管理系统，用于管理项目中的最佳实践规范。
+<div align="center">
 
-## 项目描述
+![GitHub issues](https://img.shields.io/github/issues/BlueOrgreen/fan-skills)
+![GitHub stars](https://img.shields.io/github/stars/BlueOrgreen/fan-skills)
+![GitHub forks](https://img.shields.io/github/forks/BlueOrgreen/fan-skills)
+![License](https://img.shields.io/github/license/BlueOrgreen/fan-skills)
+![Made with](https://img.shields.io/badge/Made_with-Makefile-blue)
 
-Fan Skills 是一个用于管理 Claude Code 技能（skills）的工具集。它提供：
+</div>
 
-- **Makefile** - 统一的技能管理命令
-- **Shell 脚本** - 自动化的安装/卸载流程
-- **SKILL.md 格式** - 标准化的技能文档规范
-- **开箱即用的技能** - 包含两个基础技能
+这是一个通用的 **agent skills** 仓库，用于集中管理和分发可复用的技能包（skills）。
+
+---
+
+## 📖 简介
+
+本项目提供一套标准化的 skills 目录结构与安装方式，便于将技能从仓库分发到不同 AI Agent 环境。
+
+✨ **特性：**
+- 📦 统一维护技能内容与版本
+- 🔄 支持团队共享与复用
+- 🌍 支持跨环境安装
+- 🚀 支持通过 GitHub 仓库地址直接安装
+
+---
+
+## 🚀 用法
+
+### 方式一：使用 Makefile（推荐）
+
+项目提供 Makefile 编排常用操作：
+
+| 命令 | 说明 | 图标 |
+|:-----|:-----|:-----:|
+| `make help` | 查看可用命令 | 📋 |
+| `make list` | 列出所有可用的 skills | 📚 |
+| `make install-all` | 安装所有 skills | 📥 |
+| `make install skill=<name>` | 安装单个 skill | ➕ |
+| `make uninstall skill=<name>` | 卸载指定 skill | ➖ |
+| `make status` | 查看安装状态 | 📊 |
+| `make lint` | 验证 skills 格式 | ✅ |
+| `make new name=<name>` | 创建新的 skill 模板 | 🆕 |
+| `make clean` | 清理所有已安装的 skills | 🧹 |
+
+```bash
+# 自定义安装目录
+make TARGET_ROOT=/custom/path install-all
+```
+
+---
+
 
 ## 目录结构
 
@@ -131,3 +172,13 @@ description: 技能描述
 ```
 
 3. 运行 `make install-all` 或 `make install skill=your-skill-name`
+
+---
+
+## 📝 许可证
+
+<div align="center">
+
+[MIT License](LICENSE) © 2026 TaueFenCheng
+
+</div>
